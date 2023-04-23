@@ -1,0 +1,28 @@
+{% extends "base.html" %} {% block title %} login {% endblock title %} {% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6">
+            <h3>Login Here</h3>
+            <form action="" method="post">
+                {% csrf_token %}
+                <h4 class="text-danger">{{error}}</h4>
+
+
+                <div class="my-2">
+                    <label for="lemail" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="lemail" name="lemail" value="{{values.email}}" placeholder="name@example.com">
+                </div>
+                <div class="my-2">
+                    <label for="lpassword" class="form-label">Create password</label>
+                    <input type="password" class="form-control" id="lpassword" name="lpassword" placeholder="Enter Your Password">
+                </div>
+
+
+                <button type="submit" class="btn btn-info">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
